@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <style>
+     
+        #hg{
+            border-radius: 50%;
+        }
+        #red{
+            border-color: 1px solid ;
+            border-radius: 50%;
+            border:10px solid red;
+            box-shadow:0px 4px 10px rgba(0,0,0,0.3);
+
+        }
+        #yellow{
+            border-color: 1px solid ;
+            border-radius: 50%;
+            border-top: 10px red;
+            border:10px solid yellow;
+            
+
+        }
+        #green{  /* width:150px;
+  height:150px; */
+  border-radius:50%;
+  
+  background: conic-gradient(
+    green 0% 90%,
+    white 90% 100%
+  );
+  -webkit-mask: radial-gradient(circle, transparent 65%, black 66%);
+  mask: radial-gradient(circle, transparent 65%, black 66%);
+        }
+           #d-green{
+       border-color: 1px solid ;    
+            border-radius: 50%;
+            border:10px solid rgb(12, 67, 33);
+           }
+  
+#hr{
+    height:2px;
+    border: 2px solid;
+    color: crimson;
+    border-radius: 10px;
+}
+.a{
+    
+  width:200px;
+  height:20px;
+}
+
+a::-webkit-meter-optimum-value{
+  background: green;
+}
+
+a::-webkit-meter-suboptimum-value{
+  background: orange;
+}
+
+a::-webkit-meter-even-less-good-value{
+  background: red;
+}
+body{
+  margin:0;
+}
+
+.bg{
+  height:100vh;
+  width:100%;
+  background: linear-gradient(
+    45deg,
+    #4f6df5,
+    #cfd8ff,
+    #fff2a8,
+    #ff6b5c
+  );
+}
+body{
+  margin:0;
+}
+#grade{
+    
+  height:100vh;
+  background: linear-gradient(
+    120deg,
+    #ffb75e 0%,
+    #edcda3 20%,
+    #d7d2cc 40%,
+    #9ec5fe 70%,
+    #8e7cc3 100%
+  );
+}
+#glow{
+    
+  height:100vh;
+  width:100%;
+  
+  background: linear-gradient(
+    135deg,
+    #ff7e79,
+    #f2c078,
+    #8ecae6,
+    #4ea8de
+  );
+
+}
+.skill-container {
+  display: flex;
+  gap: 40px;
+  font-family: sans-serif;
+}
+
+.skill-card {
+  text-align: center;
+}
+
+.circular-progress {
+  --size: 130px;
+  --half: calc(var(--size) / 2);
+  --stroke-width: 10px;
+
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  
+  /* The Magic: Conic Gradient */
+  background: conic-gradient(var(--color) var(--percent), #e0e0e0 0);
+  
+  /* Adding the soft glow/shadow from your image */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Creating the inner white circle */
+.circular-progress::before {
+  content: "";
+  position: absolute;
+  width: calc(var(--size) - (var(--stroke-width) * 2));
+  height: calc(var(--size) - (var(--stroke-width) * 2));
+  background-color: white;
+  border-radius: 50%;
+}
+
+.value {
+  position: relative; /* Sits above the ::before pseudo-element */
+  font-size: 24px;
+  font-weight: bold;
+  color: #37474f;
+}
+
+h3 {
+  margin-top: 20px;
+  color: #37474f;
+  font-size: 18px;
+}
+.languages-container {
+  display: flex;
+  gap: 50px;
+  font-family: sans-serif;
+  padding: 40px;
+  background: #fff;
+}
+
+.lang-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+}
+
+.percentage {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--clr);
+  margin-bottom: 10px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #25a6e7;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+/* Custom Progress Bar Styling */
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #eadddd; /* The light background track */
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.fill {
+  height: 100%;
+  background-color: var(--clr); /* Uses the color defined in HTML */
+  border-radius: 10px;
+  /* Glow effect matching your image */
+  box-shadow: 0 0 10px var(--clr);
+  opacity: 0.8;
+}
+     </style>
+     </head>
+     <body>
+  <div class="w-full h-[70px] flex justify-center gap-5 shadow-lg bg-amber-100 sticky top-0 z-10 bg-opacity-90">
+        <!-- logo -->
+        <div class=" h-25 w-1/3 text-red flex mx-5 ">
+            <img class="h-[50px] w-[50px] mx-3 my-1" src="./images/Gemini_Generated_Image_a20py7a20py7a20p.png" alt="">
+            <h1 class="font-bold text-3xl py-2">Freelancer</h1>
+        </div>
+        <div id="a" class=" w-1/2 mx-5 my-5 flex gap-5 border-r-blue-500 justify-center items-center" style="margin-left: 270px;" >
+            <a class="hover:text-sky-400" href="#">Home</a>
+            <a class="hover:text-sky-400" href="#">About</a>
+            <a class="hover:text-sky-400" href="#">services</a>
+            <a class="hover:text-sky-400" href="#">portfolio</a>
+            <a class="hover:text-sky-400" href="#">Pricing</a>
+            <a class="hover:text-sky-400" href="#">Experience</a>
+            <a class="hover:text-sky-400" href="#">contact</a>
+        </div>
+        
+     
+         <div class=" w-1/4  flex justify-end items-center  mr-5">
+            <div class="h-full w-1/3 bg-yellow-300 flex justify-center items-center">
+            <a class="text-3xl text-yellow-100 hover:text-red-400" href="#"><i class="bi bi-microsoft"></i>   </a>
+            </div>
+        </div>
+     
+
+    </div> 
+     <div class="row h-[550px] bg-black-900 mx-5 my- flex relative bg">
+        <div class="col-2 h-[550px] w-1/12 flex flex-col ">
+            
+        </div>
+        <div class="col-5 h-[550px] w-5/12 flex justify-center items-center">
+            <div class="h-50 w-100 ">
+                <h1 class="font-bold text-3xl py-2">I’m Rebecca Benjamin <h1 class="font-bold text-3xl py-2 text-amber-300"> A Digital Product</h1> <h1 class="font-bold text-3xl py-2"> Designer</h1></h1>
+                
+                <button class="bg-yellow-500 w-25 mx- my-5 py-2 rounded-2xl cursor-pointer ">hire me</button>
+                <button class="bg-red-400 w-25 mx-3 my-5 py-2 rounded-2xl cursor-pointer ">My work</button>
+            </div>
+        </div>
+        <img class="h-[150px] w-[300px] absolute bottom-6 right-70 rrounded-xl shadow-lg" src="./images/WhatsApp Image 2026-03-13 at 12.57.21.jpeg" alt="">
+                       <div class="h-[60px] w-[60px] shadow-lg bg-white rounded-3xl flex justify-center items-center absolute rotate-300"style="position: absolute; bottom: 25%; right: 13%;" >
+  <a class=" text-3xl bg-green-400 text-white  rounded-3xl  " href=""><i class="fa-brands fa-upwork"></i></a>
+</div>
+<div class="h-[60px] w-[60px]   shadow-lg bg-white rounded-3xl flex justify-center items-center absolute rotate-300" style="position: absolute; bottom: 75%; left: 87%;">
+  <a class=" text-3xl bg-blue-600 text-white  rounded-3xl " href=""><i class="fa-brands fa-behance"></i></a>
+</div>
+<div class="h-[60px] w-[60px]  shadow-lg bg-white rounded-3xl flex justify-center items-center absolute  rotate-300" style="position: absolute; left: 50%; bottom: 76%;">
+  <a class=" text-3xl bg-rose-600 text-white  rounded-3xl " href=""><i class="fa-brands fa-dribbble" ></i></a>
+</div>
+<div class="h-[60px] w-[60px]  shadow-lg bg-white  rounded-3xl flex justify-center items-center absolute rotate-30" style="position: absolute; bottom: 25%; left: 52%;">
+  <a class=" text-3xl bg-red-700 text-white  rounded-3xl " href=""><i class="fa-brands fa-pinterest"></i></a>
+</div>
+        <div class="col-5 h-[550px] w-5/12  rounded-3xl">
+            <img id="hg" class="w-full h-full " src="./images/Gemini_Generated_Image_8cbwe48cbwe48cbw.png" alt="">
+        </div>
+     </div>
+     <div id="grade" class="row h-[550px] bg-black-900 mx-5 flex flex flex-wrap">
+        <div class=" h-[100px] w-full float ">
+            <h1 class="font-bold text-3xl py-2 flex justify-center my-">About Me</h1>
+            <div class="flex justify-center items-center">
+            <hr id="hr" class=" w-[200px] h-[200px]  text-rose-300">
+            </div>
+            <h1 class="font-bold text-xl py-2 flex justify-center mb-3">My mission is Design the best websites around</h1>
+        </div>
+        <div class="flex  "> 
+            <div class=" h-[450px] w-[550px] mx-[10%] relative">
+               <img id="hg" class="w-full h-full" src="./images/Gemini_Generated_Image_8cbwe48cbwe48cbw.png" alt="">
+               <img class="h-[150px] w-[300px] absolute -bottom-7 -right-5 rounded-3xl shadow-lg" src="./images/second.png" alt="">
+            </div> 
+        <div class="h-[450px] w-[790px] flex flex-col justify-center items-center ">
+            <div class="h-[80px] w-[490px] ">
+            <h1 class="font-bold text-3xl py-2">I'm In The Design Industry With 10 Years Of Experience.</h1>
+            </div>
+            <div class="h-[130px] w-[490px] ">
+            <h1 class="font-bold text-md py-2">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis and the ipsum ultrices and the name.</h1>
+            </div>
+            <!-- percentage -->
+            <div class="skill-container">
+  <div class="skill-card">
+    <div class="circular-progress web" style="--percent: 95%; --color: #009688;">
+      <span class="value">95%</span>
+    </div>
+    <h3>Web Designing</h3>
+  </div>
+
+  <div class="skill-card">
+    <div class="circular-progress app" style="--percent: 70%; --color: #ffb74d;">
+      <span class="value">70%</span>
+    </div>
+    <h3>App Designing</h3>
+  </div>
+  <div class="skill-card">
+    <div class="circular-progress app" style="--percent: 70%; --color: #e41818;">
+      <span class="value">95%</span>
+    </div>
+    <h3>Video Editing</h3>
+  </div>
+    <div class="skill-card">
+    <div class="circular-progress app" style="--percent: 70%; --color: #0c9a47;">
+      <span class="value">98%</span>
+    </div>
+    <h3>3D Designing</h3>
+  </div>
+</div>
+        </div>
+        </div>
+     </div>
+          <div id="glow" class="row bg-black-900 mx-5  flex flex-wrap">
+                <div class=" h-[100px] w-full float ">
+            <h1 class="font-bold text-3xl py-2 flex justify-center my-">My Resume</h1>
+              <div class="flex justify-center items-center">
+            <hr id="hr" class=" w-[200px] h-[200px]  text-rose-300">
+            </div>
+            <h1 class="font-bold text-xl py-2 flex justify-center mb-3">My mission is Design the best websites around</h1>
+        </div>
+        <!-- degree  -->
+        <div class=" h-[450px] w-[670px] flex justify-center items-center relative"> 
+                    <div class=" rounded-lg shadow-xl h-[420px] w-[400px] bg-white relative"> 
+                        <div class=" h-[140px] w-[400px] flex flex-col justify-center items-center">
+                             <div> <h1 class="font-light "><a href=""><i class="bi bi-calendar3 text-yellow-400"></i></a> July 29, 2014 - April 13, 2022</h1></div>
+                           <div> <h1 class="font-bold text-lg">Diploma In UI/UX Design</h1></div>
+                          <div> <h1 class="font-light"><a href=""><i class="bi bi-mortarboard text-rose-500"></i></a> Institute of Graphics Technology</h></div>   
+                        </div>
+                        <div class="    h-[140px] w-[400px] flex flex-col justify-center items-center ">
+                              <div> <h1 class="font-light "><a href=""><i class="bi bi-calendar3 text-yellow-400"></i></a> July 29, 2014 - April 13, 2022</h1></div>
+                           <div> <h1 class="font-bold text-lg">Diploma In UI/UX Design</h1></div>
+                          <div> <h1 class="font-light"><a href=""><i class="bi bi-mortarboard text-rose-500"></i></a> Institute of Graphics Technology</h></div>
+                        </div>
+                        <div class=" h-[140px] w-[400px] flex flex-col justify-center items-center">
+                              <div> <h1 class="font-light "><a href=""><i class="bi bi-calendar3 text-yellow-400"></i></a> July 29, 2014 - April 13, 2022</h1></div>
+                           <div> <h1 class="font-bold text-lg">Diploma In UI/UX Design</h1></div>
+                          <div> <h1 class="font-light"><a href=""><i class="bi bi-mortarboard text-rose-500"></i></a> Institute of Graphics Technology</h></div>
+                        </div>
+                        <button class="bg-yellow-400 w-50 mx-3 my-5 py-3 px-3 rounded-3xl cursor-pointer absolute top-40 rotate-270 right-73 shadow-lg"><a href=""><i class="bi bi-mortarboard "></i></a> My Experience</button> 
+                    </div>
+                    
+                </div>
+                 <div class=" h-[450px] w-[670px] flex justify-center items-center relative">
+                    <div class=" shadow-lg rounded-lg h-[420px] w-[400px] bg-white"> 
+                        <div class=" h-[140px] w-[400px] flex flex-col justify-center items-center">
+                             <div> <h1 class="font-light "><a href=""><i class="bi bi-calendar3 text-yellow-400"></i></a>July 29, 2014 - April 13, 2022</h1></div>
+                           <div> <h1 class="font-bold text-md-center">Graphics Designer</h1></div>
+                          <div> <h1 class="font-light"><a href=""><i class="bi bi-mortarboard text-rose-500"></i></a> Institute of Graphics Technology</h></div>   
+                        </div>
+                        <div class=" h-[140px] w-[400px] flex flex-col justify-center items-center">
+                              <div> <h1 class="font-light "><a href=""><i class="bi bi-calendar3 text-yellow-400"></i></a> July 29, 2014 - April 13, 2022</h1></div>
+                           <div> <h1 class="font-bold text-md">Graphics & Web Designer
+</h1></div>
+                          <div> <h1 class="font-light"><a href=""><i class="bi bi-mortarboard text-rose-500"></i></a> Institute of Graphics Technology</h></div>
+                        </div>
+                        <div class=" h-[140px] w-[400px] flex flex-col justify-center items-center">
+                              <div> <h1 class="font-light "><a href=""><i class="bi bi-calendar3 text-yellow-400"></i></a> July 29, 2014 - April 13, 2022</h1></div>
+                           <div> <h1 class="font-bold text-md">Senior Front-End Developer
+</h1></div>
+                          <div> <h1 class="font-light"><a href=""><i class="bi bi-mortarboard text-rose-500"></i></a> Institute of Graphics Technology</h></div>
+                        </div>
+                        <button class="bg-rose-500 w-50 mx-3 my-5 py-3 px-3 rounded-3xl cursor-pointer absolute top-40 rotate-270 left-4 shadow-lg"><a href=""><i class="bi bi-mortarboard "></i></a> My Experience</button> 
+                    </div>
+                </div> 
+               
+        </div>
+     </div>
+      <div id="glow" class="row h-[100px] flex flex-col items-center  relative">
+        <div class="h-[220px] w-[1100px] shadow-lg bg-white rounded-lg flex  justify-around gap-[50xp] mx-5 my-">
+          <div class="h-[200px] w-[230px] lang-card" style="--clr: #408e95;">
+               
+              <div class="h-1/3 w-full flex justify-center items-center"><h1 class="font-bold text-3xl text-teal-500">96%</h1></div>
+                  <div class="h-1/3 w-full S flex justify-center items-center"><h1 class="font-bold text-md">ENGLISH</h1></div>
+                  <div class="progress-bar"><div class="fill" style="width: 84%;"></div></div>
+              </div>
+              <div class="h-[200px] w-[230px] lang-card" style="--clr: #ff1d04;">
+                <div class="h-1/3 w-full flex justify-center items-center"><h1 class="font-bold text-3xl text-rose-500">86%</h1></div>
+                <div class="h-1/3 w-full flex justify-center items-center"><h1 class="font-bold text-md">HINDI</h1></div>
+                <div class="progress-bar"><div class="fill" style="width: 84%;"></div></div>
+              </div>
+              <div class="h-[200px] w-[230px] lang-card" style="--clr: #ffbb01; ">
+                 <div class="h-1/3 w-full flex justify-center items-center"><h1 class="font-bold text-3xl text-amber-500">75%</h1></div>
+                  <div class="h-1/3 w-full flex justify-center items-center"><h1 class="font-bold text-md">SPANISH</h1></div>
+                 <div class="progress-bar"><div class="fill" style="width: 84%;"></div></div>
+              </div>
+              <div class="h-[200px] w-[230px] lang-card" style="--clr: #07b118; ">
+                  <div class="h-1/3 w-full  flex justify-center items-center"><h1 class="font-bold text-3xl text-green-500">96%</h1></div>
+                  <div class="h-1/3 w-full flex justify-center items-center"><h1 class="font-bold text-md">JAPANESE</h1></div>
+                  <div class="progress-bar"><div class="fill" style="width: 84%;"></div></div>
+              </div>
+              <div class="h-[200px] w-[230px] lang-card" style="--clr: #a612cb;">
+                  <div class="h-1/3 w-full  flex justify-center items-center"><h1 class="font-bold text-3xl text-fuchsia-500">84%</h1></div>
+                  <div class="h-1/3 w-full  flex justify-center items-center"><h1 class="font-bold text-md">FRENCH</h1></div>
+                  <div class="progress-bar"><div class="fill" style="width: 84%;"></div></div>
+              </div>
+                        <button class="bg-yellow-400 w-50 mx-3 my-5 py-3 px-3 rounded-3xl cursor-pointer absolute top-15 left-6 rotate-270 shadow-lg"><a href=""><i class="bi bi-mortarboard "></i></a> Languages</button> 
+          </div>
+          <div class=" h-[70px] w-[1100px] flex justify-center items-center">
+            <h1 class="font-bold text-md">You Can aslo Download my Resume in PDF Format</h1>
+            <button class="bg-rose-400 w-25 mx-3 my-5 py-3 rounded-2xl cursor-pointer "><a href=""><i class="bi bi-file-earmark-fill"></i></a>Download</button>
+
+          </div>
+          </div>
+        </div> 
+      </body>
+</html>
