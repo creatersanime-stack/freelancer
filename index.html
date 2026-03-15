@@ -212,6 +212,58 @@ h3 {
   box-shadow: 0 0 10px var(--clr);
   opacity: 0.8;
 }
+#anim{
+  position: absolute; bottom: 25%; right: 13%;
+    animation: rotateDiv 3s linear  infinite;
+}
+
+@keyframes rotateDiv{
+  from{
+    transform: rotate(0deg);  
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+#anim1{
+position: absolute; bottom: 75%; left: 87%;
+  animation: rotateDiv 3s linear  infinite;
+}
+
+@keyframes rotateDiv{
+  from{
+    transform: rotate(0deg);  
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+#anim2{
+  position: absolute; left: 50%; bottom: 76%;
+  animation: rotateDiv 3s linear  infinite;
+}
+
+@keyframes rotateDiv{
+  from{
+    transform: rotate(0deg);  
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+#anim3{
+  position: absolute; bottom: 25%; left: 52%;
+  animation: rotateDiv 3s linear  infinite;
+}
+
+@keyframes rotateDiv{
+  from{
+    transform: rotate(0deg);  
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
      </style>
      </head>
      <body>
@@ -253,16 +305,16 @@ h3 {
             </div>
         </div>
         <img class="h-[150px] w-[300px] absolute bottom-6 right-70 rrounded-xl shadow-lg" src="./images/WhatsApp Image 2026-03-13 at 12.57.21.jpeg" alt="">
-                       <div class="h-[60px] w-[60px] shadow-lg bg-white rounded-3xl flex justify-center items-center absolute rotate-300"style="position: absolute; bottom: 25%; right: 13%;" >
+                       <div id="anim" class="h-[60px] w-[60px] shadow-lg bg-white rounded-3xl flex justify-center items-center absolute rotate-300" >
   <a class=" text-3xl bg-green-400 text-white  rounded-3xl  " href=""><i class="fa-brands fa-upwork"></i></a>
 </div>
-<div class="h-[60px] w-[60px]   shadow-lg bg-white rounded-3xl flex justify-center items-center absolute rotate-300" style="position: absolute; bottom: 75%; left: 87%;">
+<div id="anim1" class="h-[60px] w-[60px]   shadow-lg bg-white rounded-3xl flex justify-center items-center absolute rotate-300">
   <a class=" text-3xl bg-blue-600 text-white  rounded-3xl " href=""><i class="fa-brands fa-behance"></i></a>
 </div>
-<div class="h-[60px] w-[60px]  shadow-lg bg-white rounded-3xl flex justify-center items-center absolute  rotate-300" style="position: absolute; left: 50%; bottom: 76%;">
+<div id="anim2" class="h-[60px] w-[60px]  shadow-lg bg-white rounded-3xl flex justify-center items-center absolute  rotate-300" >
   <a class=" text-3xl bg-rose-600 text-white  rounded-3xl " href=""><i class="fa-brands fa-dribbble" ></i></a>
 </div>
-<div class="h-[60px] w-[60px]  shadow-lg bg-white  rounded-3xl flex justify-center items-center absolute rotate-30" style="position: absolute; bottom: 25%; left: 52%;">
+<div id="anim3" class="h-[60px] w-[60px]  shadow-lg bg-white  rounded-3xl flex justify-center items-center absolute rotate-30" >
   <a class=" text-3xl bg-red-700 text-white  rounded-3xl " href=""><i class="fa-brands fa-pinterest"></i></a>
 </div>
         <div class="col-5 h-[550px] w-5/12  rounded-3xl">
@@ -354,7 +406,7 @@ h3 {
                     <div class=" shadow-lg rounded-lg h-[420px] w-[400px] bg-white"> 
                         <div class=" h-[140px] w-[400px] flex flex-col justify-center items-center">
                              <div> <h1 class="font-light "><a href=""><i class="bi bi-calendar3 text-yellow-400"></i></a>July 29, 2014 - April 13, 2022</h1></div>
-                           <div> <h1 class="font-bold text-md-center">Graphics Designer</h1></div>
+                             <div> <h1 class="font-bold text-md-center">Graphics Designer</h1></div>
                           <div> <h1 class="font-light"><a href=""><i class="bi bi-mortarboard text-rose-500"></i></a> Institute of Graphics Technology</h></div>   
                         </div>
                         <div class=" h-[140px] w-[400px] flex flex-col justify-center items-center">
