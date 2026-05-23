@@ -1,468 +1,530 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-     <style>
-     
-        #hg{
-            border-radius: 50%;
+    <title>Anand Kumar Awasthi | Civil & Tax Advocate</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display for Serifs, Inter for UI -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Lucide Icons for Premium UI Vectors -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navyBlack: '#0b1120',
+                        legalGold: {
+                            DEFAULT: '#d4af37',
+                            light: '#f3e5ab',
+                            dark: '#aa820a'
+                        },
+                        glassWhite: 'rgba(255, 255, 255, 0.03)',
+                        glassBorder: 'rgba(212, 175, 55, 0.15)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    boxShadow: {
+                        'premium-gold': '0 20px 50px -12px rgba(212, 175, 55, 0.1)',
+                        'inner-glow': 'inset 0 1px 1px rgba(255, 255, 255, 0.05)',
+                    }
+                }
+            }
         }
-        #red{
-            border-color: 1px solid ;
+    </script>
+    <style>
+        body {
+            background-color: #0b1120;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.12);
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.03);
+        }
+        .glass-panel:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+            background: rgba(255, 255, 255, 0.04);
+        }
+        /* Custom subtle ambient radial glow effects */
+        .ambient-glow {
+            position: absolute;
+            width: 500px;
+            height: 500px;
             border-radius: 50%;
-            border:10px solid red;
-            box-shadow:0px 4px 10px rgba(0,0,0,0.3);
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, rgba(11, 17, 32, 0) 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="text-slate-200 selection:bg-legalGold selection:text-navyBlack antialiased">
 
-        }
-        #yellow{
-            border-color: 1px solid ;
-            border-radius: 50%;
-            border-top: 10px red;
-            border:10px solid yellow;
+    <!-- Ambient Lighting Layers -->
+    <div class="ambient-glow top-[-100px] left-[-100px]"></div>
+    <div class="ambient-glow top-[40%] right-[-150px]"></div>
+    <div class="ambient-glow bottom-[-100px] left-[20%]"></div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 w-full border-b border-white/5 bg-navyBlack/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <!-- Premium Abstract Pillars Logo Mark -->
+                <div class="w-10 h-10 border border-legalGold/30 rounded flex flex-col justify-between p-2 items-center group-hover:border-legalGold transition-colors duration-300">
+                    <div class="w-full h-[2px] bg-legalGold"></div>
+                    <div class="flex gap-[3px] w-full items-end h-full mt-1 justify-center">
+                        <div class="w-[2px] h-4 bg-legalGold/80"></div>
+                        <div class="w-[2px] h-5 bg-legalGold"></div>
+                        <div class="w-[2px] h-4 bg-legalGold/80"></div>
+                    </div>
+                    <div class="w-full h-[2px] bg-legalGold mt-1"></div>
+                </div>
+                <div>
+                    <span class="font-serif text-lg tracking-wider block text-white font-semibold">A. K. AWASTHI</span>
+                    <span class="text-[10px] tracking-[0.2em] uppercase text-legalGold font-medium block leading-none">Advocate & Consultant</span>
+                </div>
+            </a>
             
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-slate-400">
+                <a href="#about" class="hover:text-legalGold transition-colors">About Profile</a>
+                <a href="#services" class="hover:text-legalGold transition-colors">Practice Areas</a>
+                <a href="#experience" class="hover:text-legalGold transition-colors">Credentials</a>
+                <a href="#contact" class="hover:text-legalGold transition-colors">Contact</a>
+            </nav>
 
-        }
-        #green{  /* width:150px;
-  height:150px; */
-  border-radius:50%;
-  
-  background: conic-gradient(
-    green 0% 90%,
-    white 90% 100%
-  );
-  -webkit-mask: radial-gradient(circle, transparent 65%, black 66%);
-  mask: radial-gradient(circle, transparent 65%, black 66%);
-        }
-           #d-green{
-       border-color: 1px solid ;    
-            border-radius: 50%;
-            border:10px solid rgb(12, 67, 33);
-           }
-  
-#hr{
-    height:2px;
-    border: 2px solid;
-    color: crimson;
-    border-radius: 10px;
-}
-.a{
-    
-  width:200px;
-  height:20px;
-}
-
-a::-webkit-meter-optimum-value{
-  background: green;
-}
-
-a::-webkit-meter-suboptimum-value{
-  background: orange;
-}
-
-a::-webkit-meter-even-less-good-value{
-  background: red;
-}
-body{
-  margin:0;
-}
-
-.bg{
-  height:100vh;
-  width:100%;
-  background: linear-gradient(
-    45deg,
-    #4f6df5,
-    #cfd8ff,
-    #fff2a8,
-    #ff6b5c
-  );
-}
-body{
-  margin:0;
-}
-#grade{
-    
-  height:100vh;
-  background: linear-gradient(
-    120deg,
-    #ffb75e 0%,
-    #edcda3 20%,
-    #d7d2cc 40%,
-    #9ec5fe 70%,
-    #8e7cc3 100%
-  );
-}
-#glow{
-    
-  height:100vh;
-  width:100%;
-  
-  background: linear-gradient(
-    135deg,
-    #ff7e79,
-    #f2c078,
-    #8ecae6,
-    #4ea8de
-  );
-
-}
-.skill-container {
-  display: flex;
-  gap: 40px;
-  font-family: sans-serif;
-}
-
-.skill-card {
-  text-align: center;
-}
-
-.circular-progress {
-  --size: 130px;
-  --half: calc(var(--size) / 2);
-  --stroke-width: 10px;
-
-  width: var(--size);
-  height: var(--size);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  
-  /* The Magic: Conic Gradient */
-  background: conic-gradient(var(--color) var(--percent), #e0e0e0 0);
-  
-  /* Adding the soft glow/shadow from your image */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-/* Creating the inner white circle */
-.circular-progress::before {
-  content: "";
-  position: absolute;
-  width: calc(var(--size) - (var(--stroke-width) * 2));
-  height: calc(var(--size) - (var(--stroke-width) * 2));
-  background-color: white;
-  border-radius: 50%;
-}
-
-.value {
-  position: relative; /* Sits above the ::before pseudo-element */
-  font-size: 24px;
-  font-weight: bold;
-  color: #37474f;
-}
-
-h3 {
-  margin-top: 20px;
-  color: #37474f;
-  font-size: 18px;
-}
-.languages-container {
-  display: flex;
-  gap: 50px;
-  font-family: sans-serif;
-  padding: 40px;
-  background: #fff;
-}
-
-.lang-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 120px;
-}
-
-.percentage {
-  font-size: 32px;
-  font-weight: bold;
-  color: var(--clr);
-  margin-bottom: 10px;
-}
-
-.label {
-  font-size: 14px;
-  font-weight: 600;
-  color: #25a6e7;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
-}
-
-/* Custom Progress Bar Styling */
-.progress-bar {
-  width: 100%;
-  height: 8px;
-  background-color: #eadddd; /* The light background track */
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-}
-
-.fill {
-  height: 100%;
-  background-color: var(--clr); /* Uses the color defined in HTML */
-  border-radius: 10px;
-  /* Glow effect matching your image */
-  box-shadow: 0 0 10px var(--clr);
-  opacity: 0.8;
-}
-#anim{
-  position: absolute; bottom: 25%; right: 13%;
-    animation: rotateDiv 3s linear  infinite;
-}
-
-@keyframes rotateDiv{
-  from{
-    transform: rotate(0deg);  
-  }
-  to{
-    transform: rotate(360deg);
-  }
-}
-#anim1{
-position: absolute; bottom: 75%; left: 87%;
-  animation: rotateDiv 3s linear  infinite;
-}
-
-@keyframes rotateDiv{
-  from{
-    transform: rotate(0deg);  
-  }
-  to{
-    transform: rotate(360deg);
-  }
-}
-#anim2{
-  position: absolute; left: 50%; bottom: 76%;
-  animation: rotateDiv 3s linear  infinite;
-}
-
-@keyframes rotateDiv{
-  from{
-    transform: rotate(0deg);  
-  }
-  to{
-    transform: rotate(360deg);
-  }
-}
-#anim3{
-  position: absolute; bottom: 25%; left: 52%;
-  animation: rotateDiv 3s linear  infinite; 
-}
-
- @keyframes rotateDiv{
-  from{
-    transform: rotate(0deg);  
-  }
-  to{
-    transform: rotate(360deg);
-  }
-}
-     </style>
-     </head>
-     <body>
-  <div class="w-full h-[70px]  flex justify-center gap-5 shadow-lg bg-amber-100 sticky top-0 z-10 bg-opacity-90">
-        <!-- logo -->
-        <div class=" h-25 w-1/3 text-red flex mx-5 ">
-            <img class="h-[50px] w-[50px] mx-3 my-1" src="./images/Gemini_Generated_Image_a20py7a20py7a20p.png" alt="">
-            <h1 class="font-bold text-3xl py-2">Freelancer</h1>
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="hidden sm:inline-flex px-5 py-2.5 border border-legalGold text-legalGold hover:bg-legalGold hover:text-navyBlack text-xs font-semibold tracking-wider uppercase rounded transition-all duration-300">
+                    Secure Council
+                </a>
+            </div>
         </div>
-        <div id="a" class=" w-1/2 mx-5 my-5 flex gap-5 border-r-blue-500 justify-center items-center" style="margin-left: 270px;" >
-            <a class="hover:text-sky-400" href="#">Home</a>
-            <a class="hover:text-sky-400" href="#">About</a>
-            <a class="hover:text-sky-400" href="#">services</a>
-            <a class="hover:text-sky-400" href="#">portfolio</a>
-            <a class="hover:text-sky-400" href="#">Pricing</a>
-            <a class="hover:text-sky-400" href="#">Experience</a>
-            <a class="hover:text-sky-400" href="#">contact</a>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section class="relative min-h-[calc(100vh-80px)] flex items-center justify-center pt-12 pb-24 px-6 z-10">
+        <div class="max-w-5xl mx-auto text-center">
+            
+            <!-- Scale of Justice Soft Vector Icon Badge -->
+            <div class="inline-flex items-center justify-center p-3 rounded-full bg-white/5 border border-legalGold/20 mb-8 shadow-inner-glow">
+                <i data-lucide="scale" class="w-6 h-6 text-legalGold stroke-[1.25]"></i>
+            </div>
+
+            <!-- Main Premium Typography -->
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl text-white font-bold tracking-tight mb-6 max-w-4xl mx-auto leading-[1.15]">
+                Anand Kumar Awasthi
+            </h1>
+            
+            <!-- Professional Credentials Strip -->
+            <p class="font-sans text-xs sm:text-sm md:text-base tracking-[0.18em] uppercase font-semibold text-legalGold mb-8 max-w-3xl mx-auto">
+                Civil Advocate <span class="mx-2 text-white/20">•</span> Tax Consultant <span class="mx-2 text-white/20">•</span> GST & Income Tax Practitioner
+            </p>
+            
+            <!-- Explanatory Sub-Copy -->
+            <p class="text-slate-400 text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed mb-12">
+                Providing trusted legal, taxation, GST, and income tax consultancy services to corporations and high-net-worth individuals with professionalism, accuracy, and absolute commitment.
+            </p>
+
+            <!-- Luxury Action Hub -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-legalGold to-legalGold-dark text-navyBlack font-semibold text-sm rounded shadow-premium-gold hover:opacity-90 transition-all duration-300 uppercase tracking-wider">
+                    Book Consultation
+                </a>
+                <a href="tel:+919999999999" class="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 hover:border-legalGold/40 text-white font-semibold text-sm rounded transition-all duration-300 uppercase tracking-wider flex items-center justify-center gap-2">
+                    <i data-lucide="phone" class="w-4 h-4 text-legalGold"></i> Contact Now
+                </a>
+            </div>
+
+            <!-- Courtroom Floating Icon Accents -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto mt-24 border-t border-white/5 pt-12 text-left">
+                <div class="flex gap-4 items-start">
+                    <i data-lucide="landmark" class="w-5 h-5 text-legalGold shrink-0 mt-0.5"></i>
+                    <div>
+                        <h4 class="text-sm font-semibold text-white">Appellate Advocacy</h4>
+                        <p class="text-xs text-slate-400 mt-1">High Court & Statutory Tribunal Representations.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <i data-lucide="shield-check" class="w-5 h-5 text-legalGold shrink-0 mt-0.5"></i>
+                    <div>
+                        <h4 class="text-sm font-semibold text-white">Tax Risk Management</h4>
+                        <p class="text-xs text-slate-400 mt-1">Strategic structuring and regulatory alignment.</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex gap-4 items-start class">
+                    <i data-lucide="scroll" class="w-5 h-5 text-legalGold shrink-0 mt-0.5"></i>
+                    <div>
+                        <h4 class="text-sm font-semibold text-white">Corporate Compliance</h4>
+                        <p class="text-xs text-slate-400 mt-1">Flawless documentation and legal parameters.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 2. ABOUT PROFILE SECTION -->
+    <section id="about" class="py-24 px-6 border-t border-white/5 bg-navyBlack/50 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-12 gap-16 items-start">
+                
+                <!-- Layout Profile Descriptor Header Left -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="inline-block text-xs uppercase font-bold tracking-[0.2em] text-legalGold">The Counsel Profile</div>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-white font-bold leading-tight">Decades of Trusted Counsel & Advocacy</h2>
+                    <p class="text-slate-400 font-light leading-relaxed">
+                        Senior Advocate Anand Kumar Awasthi provides tailored legal advisory strategies across complex Indian frameworks. Melding precise knowledge of state taxation laws with structured civil litigation practices to serve as an authoritative shield for businesses and individuals alike.
+                    </p>
+                    
+                    <div class="pt-4">
+                        <blockquote class="border-l-2 border-legalGold pl-4 italic text-slate-300 text-sm">
+                            "Integrity, structural accuracy, and meticulous litigation preparation form the cornerstone of corporate financial protection."
+                        </blockquote>
+                    </div>
+                </div>
+
+                <!-- Structural Grid Profile Cards Right -->
+                <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6">
+                    
+                    <div class="glass-panel p-8 rounded-lg transition-all duration-300">
+                        <div class="w-10 h-10 rounded bg-legalGold/10 flex items-center justify-center mb-6 border border-legalGold/20">
+                            <i data-lucide="gavel" class="w-5 h-5 text-legalGold"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Civil Advocate</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Handling high-stakes property legal disputes, validation operations, execution of complex contracts, and corporate litigation actions.</p>
+                    </div>
+
+                    <div class="glass-panel p-8 rounded-lg transition-all duration-300">
+                        <div class="w-10 h-10 rounded bg-legalGold/10 flex items-center justify-center mb-6 border border-legalGold/20">
+                            <i data-lucide="percent" class="w-5 h-5 text-legalGold"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Sales Tax & GST Practice</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Strategic structuring advice for complex multi-state operational transactions, systematic regular auditing, and advisory structures.</p>
+                    </div>
+
+                    <div class="glass-panel p-8 rounded-lg transition-all duration-300">
+                        <div class="w-10 h-10 rounded bg-legalGold/10 flex items-center justify-center mb-6 border border-legalGold/20">
+                            <i data-lucide="briefcase" class="w-5 h-5 text-legalGold"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Department Representation</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Expert physical and digital representation before the Income Tax Department and respective statutory appellate tribunals.</p>
+                    </div>
+
+                    <div class="glass-panel p-8 rounded-lg transition-all duration-300">
+                        <div class="w-10 h-10 rounded bg-legalGold/10 flex items-center justify-center mb-6 border border-legalGold/20">
+                            <i data-lucide="award" class="w-5 h-5 text-legalGold"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Bar Association Member</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Active distinguished member of the Sales Tax Bar Association, driving compliance excellence metrics consistently.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PRACTICE AREAS / SERVICES SECTION -->
+    <section id="services" class="py-24 px-6 border-t border-white/5 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <div class="inline-block text-xs uppercase font-bold tracking-[0.2em] text-legalGold mb-3">Expertise & Strategic Advisory</div>
+                <h2 class="font-serif text-3xl sm:text-5xl text-white font-bold mb-4">Core Practice Specializations</h2>
+                <p class="text-slate-400 font-light">Navigating complex administrative networks and procedural parameters to secure organizational parameters.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service Card 1 -->
+                <div class="glass-panel p-8 rounded-lg group transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-8">
+                            <i data-lucide="balance-beam" class="w-8 h-8 text-legalGold stroke-[1.5]"></i>
+                            <span class="text-xs font-mono text-white/20 group-hover:text-legalGold/40 transition-colors">01 / CIVIL</span>
+                        </div>
+                        <h3 class="text-xl font-serif text-white font-semibold mb-4">Civil Legal Consultation</h3>
+                        <p class="text-sm text-slate-400 font-light leading-relaxed">Comprehensive risk assessment, property title checking, dispute settlement resolutions, and civil structural lawsuit representations.</p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-legalGold group-hover:gap-4 transition-all">
+                        <span>Read Framework</span> <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="glass-panel p-8 rounded-lg group transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-8">
+                            <i data-lucide="coins" class="w-8 h-8 text-legalGold stroke-[1.5]"></i>
+                            <span class="text-xs font-mono text-white/20 group-hover:text-legalGold/40 transition-colors">02 / IND-TAX</span>
+                        </div>
+                        <h3 class="text-xl font-serif text-white font-semibold mb-4">GST & Sales Tax Matters</h3>
+                        <p class="text-sm text-slate-400 font-light leading-relaxed">Navigating detailed GST filings, reverse charge disputes, operational input tax credit optimization, and statutory tax appeal setups.</p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-legalGold group-hover:gap-4 transition-all">
+                        <span>Read Framework</span> <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="glass-panel p-8 rounded-lg group transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-8">
+                            <i data-lucide="wallet" class="w-8 h-8 text-legalGold stroke-[1.5]"></i>
+                            <span class="text-xs font-mono text-white/20 group-hover:text-legalGold/40 transition-colors">03 / DIR-TAX</span>
+                        </div>
+                        <h3 class="text-xl font-serif text-white font-semibold mb-4">Income Tax Consultancy</h3>
+                        <p class="text-sm text-slate-400 font-light leading-relaxed">Tax strategy formulation, high-net-worth individual portfolio planning, returns execution, and minimization of risk exposures.</p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-legalGold group-hover:gap-4 transition-all">
+                        <span>Read Framework</span> <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                    </div>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="glass-panel p-8 rounded-lg group transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-8">
+                            <i data-lucide="sticky-note" class="w-8 h-8 text-legalGold stroke-[1.5]"></i>
+                            <span class="text-xs font-mono text-white/20 group-hover:text-legalGold/40 transition-colors">04 / COMPLIANCE</span>
+                        </div>
+                        <h3 class="text-xl font-serif text-white font-semibold mb-4">Tax Notice & Compliance</h3>
+                        <p class="text-sm text-slate-400 font-light leading-relaxed">Structured defensive processing of scrutiny notices, detailed response draft formulations, and departmental cross-examination handling.</p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-legalGold group-hover:gap-4 transition-all">
+                        <span>Read Framework</span> <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                    </div>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="glass-panel p-8 rounded-lg group transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-8">
+                            <i data-lucide="file-text" class="w-8 h-8 text-legalGold stroke-[1.5]"></i>
+                            <span class="text-xs font-mono text-white/20 group-hover:text-legalGold/40 transition-colors">05 / LEGAL-DOCS</span>
+                        </div>
+                        <h3 class="text-xl font-serif text-white font-semibold mb-4">Legal Documentation</h3>
+                        <p class="text-sm text-slate-400 font-light leading-relaxed">Aesthetic and ironclad legal drafting of commercial partnerships, commercial lease contracts, wills, and operational affidavits.</p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-legalGold group-hover:gap-4 transition-all">
+                        <span>Read Framework</span> <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                    </div>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="glass-panel p-8 rounded-lg group transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-8">
+                            <i data-lucide="trending-up" class="w-8 h-8 text-legalGold stroke-[1.5]"></i>
+                            <span class="text-xs font-mono text-white/20 group-hover:text-legalGold/40 transition-colors">06 / ADVISORY</span>
+                        </div>
+                        <h3 class="text-xl font-serif text-white font-semibold mb-4">Business Tax Advisory</h3>
+                        <p class="text-sm text-slate-400 font-light leading-relaxed">Corporate restructuring evaluations, complex mergers operational tax analysis, and structural enterprise scale configuration models.</p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-legalGold group-hover:gap-4 transition-all">
+                        <span>Read Framework</span> <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. TRUST / EXPERIENCE NUMBERS SECTION -->
+    <section id="experience" class="py-20 px-6 border-t border-white/5 bg-gradient-to-b from-navyBlack via-slate-950 to-navyBlack relative z-10">
+        <div class="max-w-5xl mx-auto">
+            <!-- Glass Wrapper with animated subtle gold accent border -->
+            <div class="relative p-12 md:p-16 rounded-xl bg-white/[0.01] border border-legalGold/20 shadow-premium-gold overflow-hidden">
+                <div class="absolute top-0 left-0 w-24 h-[1px] bg-gradient-to-r from-transparent to-legalGold"></div>
+                <div class="absolute bottom-0 right-0 w-24 h-[1px] bg-gradient-to-r from-legalGold to-transparent"></div>
+                
+                <div class="grid sm:grid-cols-3 gap-12 text-center">
+                    
+                    <div>
+                        <div class="font-serif text-4xl md:text-5xl lg:text-6xl text-white font-bold tracking-tight mb-2">25+</div>
+                        <div class="text-xs uppercase tracking-[0.2em] text-legalGold font-semibold">Years of Experience</div>
+                        <p class="text-[11px] text-slate-500 mt-1">Unmatched systemic legal mastery</p>
+                    </div>
+
+                    <div class="border-t sm:border-t-0 sm:border-x border-white/10 pt-8 sm:pt-0 px-4">
+                        <div class="font-serif text-4xl md:text-5xl lg:text-6xl text-white font-bold tracking-tight mb-2">1,800+</div>
+                        <div class="text-xs uppercase tracking-[0.2em] text-legalGold font-semibold">Cases & Matters Handled</div>
+                        <p class="text-[11px] text-slate-500 mt-1">Litigation and complex structuring</p>
+                    </div>
+
+                    <div class="border-t sm:border-t-0 pt-8 sm:pt-0">
+                        <div class="font-serif text-4xl md:text-5xl lg:text-6xl text-white font-bold tracking-tight mb-2">99%</div>
+                        <div class="text-xs uppercase tracking-[0.2em] text-legalGold font-semibold">Client Retention</div>
+                        <p class="text-[11px] text-slate-500 mt-1">Corporate trust index metrics</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CONTACT HUB SECTION -->
+    <section id="contact" class="py-24 px-6 border-t border-white/5 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-12 gap-16 items-start">
+                
+                <!-- Contact Details Left -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <div class="inline-block text-xs uppercase font-bold tracking-[0.2em] text-legalGold mb-3">Chamber Access</div>
+                        <h2 class="font-serif text-3xl sm:text-5xl text-white font-bold">Initiate Council</h2>
+                        <p class="text-slate-400 font-light mt-4 leading-relaxed">
+                            Schedule an analytical baseline file review session. Secure strict attorney-client privilege protection instantly on transmission.
+                        </p>
+                    </div>
+
+                    <!-- Direct Instant Communications Triggers -->
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://wa.me/919999999999" target="_blank" class="px-6 py-3 bg-[#25D366]/10 border border-[#25D366]/30 hover:bg-[#25D366]/20 text-[#25D366] text-xs font-semibold uppercase tracking-wider rounded flex items-center gap-2 transition-all">
+                            <i data-lucide="message-square" class="w-4 h-4"></i> WhatsApp Channel
+                        </a>
+                        <a href="tel:+919999999999" class="px-6 py-3 bg-legalGold/10 border border-legalGold/30 hover:bg-legalGold/20 text-legalGold text-xs font-semibold uppercase tracking-wider rounded flex items-center gap-2 transition-all">
+                            <i data-lucide="phone" class="w-4 h-4"></i> Call Chambers
+                        </a>
+                    </div>
+
+                    <div class="space-y-6 pt-4 border-t border-white/5">
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded bg-white/5 flex items-center justify-center border border-white/10 shrink-0">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-legalGold"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-semibold tracking-wider uppercase text-slate-400">Office Location</h4>
+                                <p class="text-sm text-white mt-1 leading-relaxed">
+                                    Legal Chambers, Near High Court Complex,<br>Lucknow, Uttar Pradesh, India
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded bg-white/5 flex items-center justify-center border border-white/10 shrink-0">
+                                <i data-lucide="mail" class="w-4 h-4 text-legalGold"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-semibold tracking-wider uppercase text-slate-400">Electronic Mail</h4>
+                                <p class="text-sm text-white mt-1">counsel.awasthi@example.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clean Premium Contact Form Card Right -->
+                <div class="lg:col-span-7 glass-panel p-8 md:p-10 rounded-xl space-y-6">
+                    <h3 class="font-serif text-xl text-white font-semibold">Secure Brief Submission</h3>
+                    
+                    <form class="space-y-6" onsubmit="event.preventDefault();">
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-[11px] font-semibold tracking-wider uppercase text-slate-400 block">Full Legal Name</label>
+                                <input type="text" placeholder="e.g., Rajesh Kumar" class="w-full bg-white/5 border border-white/10 focus:border-legalGold/50 rounded p-3 text-sm text-white outline-none transition-all" required>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[11px] font-semibold tracking-wider uppercase text-slate-400 block">Corporate Email Address</label>
+                                <input type="email" placeholder="e.g., name@company.com" class="w-full bg-white/5 border border-white/10 focus:border-legalGold/50 rounded p-3 text-sm text-white outline-none transition-all" required>
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-[11px] font-semibold tracking-wider uppercase text-slate-400 block">Phone Contact Number</label>
+                                <input type="tel" placeholder="+91 XXXXX XXXXX" class="w-full bg-white/5 border border-white/10 focus:border-legalGold/50 rounded p-3 text-sm text-white outline-none transition-all" required>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[11px] font-semibold tracking-wider uppercase text-slate-400 block">Primary Matter Domain</label>
+                                <select class="w-full bg-slate-900 border border-white/10 focus:border-legalGold/50 rounded p-3 text-sm text-slate-300 outline-none transition-all">
+                                    <option>GST & Sales Tax Litigation</option>
+                                    <option>Income Tax Advisory Scrutiny</option>
+                                    <option>Civil Property Dispute Action</option>
+                                    <option>Corporate Contract Execution</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-[11px] font-semibold tracking-wider uppercase text-slate-400 block">Brief Briefing Summary</label>
+                            <textarea rows="4" placeholder="Outline specific notice codes or legal variables briefly here..." class="w-full bg-white/5 border border-white/10 focus:border-legalGold/50 rounded p-3 text-sm text-white outline-none transition-all resize-none" required></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 bg-gradient-to-r from-legalGold to-legalGold-dark text-navyBlack font-semibold text-xs tracking-widest uppercase rounded shadow-premium-gold hover:opacity-90 transition-all duration-300">
+                            Transmit File Package
+                        </button>
+                    </form>
+
+<!-- Google Maps Embed -->
+<div class="mt-8 pt-6 border-t border-white/5">
+    
+    <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113896.634621066!2d80.85966567520421!3d26.84444503025287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd991f32b16b%3A0x93ccba8909978be7!2sPrayagraj%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1709190000000!5m2!1sen!2sin" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">>
+    </iframe>
+
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. LUXURIOUS MINIMAL FOOTER -->
+    <footer class="border-t border-white/5 bg-slate-950 py-12 px-6 relative z-10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            
+            <div class="flex items-center gap-3">
+                <div class="font-serif text-sm tracking-wider text-white font-semibold">ANAND KUMAR AWASTHI</div>
+                <span class="text-white/20">|</span>
+                <span class="text-[10px] tracking-widest uppercase text-slate-500">Legal Chambers © 2026</span>
+            </div>
+
+            <div class="flex gap-6 text-xs text-slate-500">
+                <a href="#" class="hover:text-legalGold transition-colors">Privacy Charter</a>
+                <a href="#" class="hover:text-legalGold transition-colors">Disclaimer Clause</a>
+                <a href="#" class="hover:text-legalGold transition-colors">Terms of Council</a>
+            </div>
+
+            <div class="text-right text-[11px] text-slate-600 tracking-wide font-light">
+                Designed with absolute professionalism & trust
+            </div>
+
         </div>
         
-     
-         <div class=" w-1/4  flex justify-end items-center  mr-5">
-            <div class="h-full w-1/3 bg-yellow-300 flex justify-center items-center">
-            <a class="text-3xl text-yellow-100 hover:text-red-400" href="#"><i class="bi bi-microsoft"></i>   </a>
-            </div>
-        </div>
-     
+        <!-- Bottommost Decorative Thin Gold Border Accent -->
+        <div class="w-full h-[2px] bg-gradient-to-r from-transparent via-legalGold to-transparent mt-8 opacity-40"></div>
+    </footer>
 
-    </div> 
-     <div class="row h-[550px] bg-black-900 mx-5 my- flex relative bg">
-        <div class="col-2 h-[550px] w-1/12 flex flex-col ">
-            
-        </div>
-        <div class="col-5 h-[550px] w-5/12 flex justify-center items-center">
-            <div class="h-50 w-100 ">
-                <h1 class="font-bold text-3xl py-2">I’m Rebecca Benjamin <h1 class="font-bold text-3xl py-2 text-amber-300"> A Digital Product</h1> <h1 class="font-bold text-3xl py-2"> Designer</h1></h1>
-                
-                <button class="bg-yellow-500 w-25 mx- my-5 py-2 rounded-2xl cursor-pointer  animate-pulse ...">hire me</button>
-                <button class="bg-red-400 w-25 mx-3 my-5 py-2 rounded-2xl cursor-pointer  animate-bounce ...">My work</button>
-            </div>
-        </div>
-        <img class="h-[150px] w-[300px] absolute bottom-6 right-70 rrounded-xl shadow-lg" src="./images/WhatsApp Image 2026-03-13 at 12.57.21.jpeg" alt="">
-                       <div id="anim" class="h-[60px] w-[60px] shadow-lg bg-white rounded-3xl flex justify-center items-center absolute rotate-300" >
-  <a class=" text-3xl bg-green-400 text-white  rounded-3xl  " href=""><i class="fa-brands fa-upwork"></i></a>
-</div>
-<div id="anim1" class="h-[60px] w-[60px]   shadow-lg bg-white rounded-3xl flex justify-center items-center absolute rotate-300">
-  <a class=" text-3xl bg-blue-600 text-white  rounded-3xl " href=""><i class="fa-brands fa-behance"></i></a>
-</div>
-<div id="anim2" class="h-[60px] w-[60px]  shadow-lg bg-white rounded-3xl flex justify-center items-center absolute  rotate-300" >
-  <a class=" text-3xl bg-rose-600 text-white  rounded-3xl " href=""><i class="fa-brands fa-dribbble" ></i></a>
-</div>
-<div id="anim3" class="h-[60px] w-[60px]  shadow-lg bg-white  rounded-3xl flex justify-center items-center absolute rotate-30 " >
-  <a class=" text-3xl bg-red-700 text-white  rounded-3xl " href=""><i class="fa-brands fa-pinterest"></i></a>
-</div>
-        <div class="col-5 h-[550px] w-5/12  rounded-3xl">
-            <img id="hg" class="w-full h-full " src="./images/Gemini_Generated_Image_8cbwe48cbwe48cbw.png" alt="">
-        </div>
-     </div>
-     <div id="grade" class="row h-[550px] bg-black-900 mx-5 flex flex flex-wrap">
-        <div class=" h-[100px] w-full float ">
-            <h1 class="font-bold text-3xl py-2 flex justify-center my-">About Me</h1>
-            <div class="flex justify-center items-center">
-            <hr id="hr" class=" w-[200px] h-[200px]  text-rose-300">
-            </div>
-            <h1 class="font-bold text-xl py-2 flex justify-center mb-3">My mission is Design the best websites around</h1>
-        </div>
-        <div class="flex  "> 
-            <div class=" h-[450px] w-[550px] mx-[10%] relative">
-               <img id="hg" class="w-full h-full" src="./images/Gemini_Generated_Image_8cbwe48cbwe48cbw.png" alt="">
-               <img class="h-[150px] w-[300px] absolute -bottom-7 -right-5 rounded-3xl shadow-lg" src="./images/second.png" alt="">
-            </div> 
-        <div class="h-[450px] w-[790px] flex flex-col justify-center items-center ">
-            <div class="h-[80px] w-[490px] ">
-            <h1 class="font-bold text-3xl py-2">I'm In The Design Industry With 10 Years Of Experience.</h1>
-            </div>
-            <div class="h-[130px] w-[490px] ">
-            <h1 class="font-bold text-md py-2">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis and the ipsum ultrices and the name.</h1>
-            </div>
-            <!-- percentage -->
-            <div class="skill-container">
-  <div class="skill-card">
-    <div class="circular-progress web" style="--percent: 95%; --color: #009688;">
-      <span class="value">95%</span>
-    </div>
-    <h3>Web Designing</h3>
-  </div>
+    <!-- Initialize Lucide Vector Icons Loop Script -->
+    <script>
+        lucide.createIcons();
+    </script>
 
-  <div class="skill-card">
-    <div class="circular-progress app" style="--percent: 70%; --color: #ffb74d;">
-      <span class="value">70%</span>
-    </div>
-    <h3>App Designing</h3>
-  </div>
-  <div class="skill-card">
-    <div class="circular-progress app" style="--percent: 70%; --color: #e41818;">
-      <span class="value">95%</span>
-    </div>
-    <h3>Video Editing</h3>
-  </div>
-    <div class="skill-card">
-    <div class="circular-progress app" style="--percent: 70%; --color: #0c9a47;">
-      <span class="value">98%</span>
-    </div>
-    <h3>3D Designing</h3>
-  </div>
-</div>
-        </div>
-        </div>
-     </div>
-          <div id="glow" class="row bg-black-900 mx-5  flex flex-wrap">
-                <div class=" h-[100px] w-full float ">
-            <h1 class="font-bold text-3xl py-2 flex justify-center my-">My Resume</h1>
-              <div class="flex justify-center items-center">
-            <hr id="hr" class=" w-[200px] h-[200px]  text-rose-300">
-            </div>
-            <h1 class="font-bold text-xl py-2 flex justify-center mb-3">My mission is Design the best websites around</h1>
-        </div>
-        <!-- degree  -->
-        <div class=" h-[450px] w-[670px] flex justify-center items-center relative"> 
-                    <div class=" rounded-lg shadow-xl h-[420px] w-[400px] bg-white relative"> 
-                        <div class=" h-[140px] w-[400px] flex flex-col justify-center items-center">
-                             <div> <h1 class="font-light "><a href=""><i class="bi bi-calendar3 text-yellow-400"></i></a> July 29, 2014 - April 13, 2022</h1></div>
-                           <div> <h1 class="font-bold text-lg">Diploma In UI/UX Design</h1></div>
-                          <div> <h1 class="font-light"><a href=""><i class="bi bi-mortarboard text-rose-500"></i></a> Institute of Graphics Technology</h></div>   
-                        </div>
-                        <div class="    h-[140px] w-[400px] flex flex-col justify-center items-center ">
-                              <div> <h1 class="font-light "><a href=""><i class="bi bi-calendar3 text-yellow-400"></i></a> July 29, 2014 - April 13, 2022</h1></div>
-                           <div> <h1 class="font-bold text-lg">Diploma In UI/UX Design</h1></div>
-                          <div> <h1 class="font-light"><a href=""><i class="bi bi-mortarboard text-rose-500"></i></a> Institute of Graphics Technology</h></div>
-                        </div>
-                        <div class=" h-[140px] w-[400px] flex flex-col justify-center items-center">
-                              <div> <h1 class="font-light "><a href=""><i class="bi bi-calendar3 text-yellow-400"></i></a> July 29, 2014 - April 13, 2022</h1></div>
-                           <div> <h1 class="font-bold text-lg">Diploma In UI/UX Design</h1></div>
-                          <div> <h1 class="font-light"><a href=""><i class="bi bi-mortarboard text-rose-500"></i></a> Institute of Graphics Technology</h></div>
-                        </div>
-                        <button class="bg-yellow-400 w-50 mx-3 my-5 py-3 px-3 rounded-3xl cursor-pointer absolute top-40 rotate-270 right-73 shadow-lg"><a href=""><i class="bi bi-mortarboard "></i></a> My Experience</button> 
-                    </div>
-                    
-                </div>
-                 <div class=" h-[450px] w-[670px] flex justify-center items-center relative">
-                    <div class=" shadow-lg rounded-lg h-[420px] w-[400px] bg-white"> 
-                        <div class=" h-[140px] w-[400px] flex flex-col justify-center items-center">
-                             <div> <h1 class="font-light "><a href=""><i class="bi bi-calendar3 text-yellow-400"></i></a>July 29, 2014 - April 13, 2022</h1></div>
-                             <div> <h1 class="font-bold text-md-center">Graphics Designer</h1></div>
-                          <div> <h1 class="font-light"><a href=""><i class="bi bi-mortarboard text-rose-500"></i></a> Institute of Graphics Technology</h></div>   
-                        </div>
-                        <div class=" h-[140px] w-[400px] flex flex-col justify-center items-center">
-                              <div> <h1 class="font-light "><a href=""><i class="bi bi-calendar3 text-yellow-400"></i></a> July 29, 2014 - April 13, 2022</h1></div>
-                           <div> <h1 class="font-bold text-md">Graphics & Web Designer
-</h1></div>
-                          <div> <h1 class="font-light"><a href=""><i class="bi bi-mortarboard text-rose-500"></i></a> Institute of Graphics Technology</h></div>
-                        </div>
-                        <div class=" h-[140px] w-[400px] flex flex-col justify-center items-center">
-                              <div> <h1 class="font-light "><a href=""><i class="bi bi-calendar3 text-yellow-400"></i></a> July 29, 2014 - April 13, 2022</h1></div>
-                           <div> <h1 class="font-bold text-md">Senior Front-End Developer
-</h1></div>
-                          <div> <h1 class="font-light"><a href=""><i class="bi bi-mortarboard text-rose-500"></i></a> Institute of Graphics Technology</h></div>
-                        </div>
-                        <button class="bg-rose-500 w-50 mx-3 my-5 py-3 px-3 rounded-3xl cursor-pointer absolute top-40 rotate-270 left-4 shadow-lg"><a href=""><i class="bi bi-mortarboard "></i></a> My Experience</button> 
-                    </div>
-                </div> 
-               
-        </div>
-     </div>
-      <div id="glow" class="row h-[100px] flex flex-col items-center  relative">
-        <div class="h-[220px] w-[1100px] shadow-lg bg-white rounded-lg flex  justify-around gap-[50xp] mx-5 my-">
-          <div class="h-[200px] w-[230px] lang-card" style="--clr: #408e95;">
-               
-              <div class="h-1/3 w-full flex justify-center items-center"><h1 class="font-bold text-3xl text-teal-500">96%</h1></div>
-                  <div class="h-1/3 w-full S flex justify-center items-center"><h1 class="font-bold text-md">ENGLISH</h1></div>
-                  <div class="progress-bar"><div class="fill" style="width: 84%;"></div></div>
-              </div>
-              <div class="h-[200px] w-[230px] lang-card" style="--clr: #ff1d04;">
-                <div class="h-1/3 w-full flex justify-center items-center"><h1 class="font-bold text-3xl text-rose-500">86%</h1></div>
-                <div class="h-1/3 w-full flex justify-center items-center"><h1 class="font-bold text-md">HINDI</h1></div>
-                <div class="progress-bar"><div class="fill" style="width: 84%;"></div></div>
-              </div>
-              <div class="h-[200px] w-[230px] lang-card" style="--clr: #ffbb01; ">
-                 <div class="h-1/3 w-full flex justify-center items-center"><h1 class="font-bold text-3xl text-amber-500">75%</h1></div>
-                  <div class="h-1/3 w-full flex justify-center items-center"><h1 class="font-bold text-md">SPANISH</h1></div>
-                 <div class="progress-bar"><div class="fill" style="width: 84%;"></div></div>
-              </div>
-              <div class="h-[200px] w-[230px] lang-card" style="--clr: #07b118; ">
-                  <div class="h-1/3 w-full  flex justify-center items-center"><h1 class="font-bold text-3xl text-green-500">96%</h1></div>
-                  <div class="h-1/3 w-full flex justify-center items-center"><h1 class="font-bold text-md">JAPANESE</h1></div>
-                  <div class="progress-bar"><div class="fill" style="width: 84%;"></div></div>
-              </div>
-              <div class="h-[200px] w-[230px] lang-card" style="--clr: #a612cb;">
-                  <div class="h-1/3 w-full  flex justify-center items-center"><h1 class="font-bold text-3xl text-fuchsia-500">84%</h1></div>
-                  <div class="h-1/3 w-full  flex justify-center items-center"><h1 class="font-bold text-md">FRENCH</h1></div>
-                  <div class="progress-bar"><div class="fill" style="width: 84%;"></div></div>
-              </div>
-                        <button class="bg-yellow-400 w-50 mx-3 my-5 py-3 px-3 rounded-3xl cursor-pointer absolute top-15 left-6 rotate-270 shadow-lg"><a href=""><i class="bi bi-mortarboard "></i></a> Languages</button> 
-          </div>
-          <div class=" h-[70px] w-[1100px] flex justify-center items-center">
-            <h1 class="font-bold text-md">You Can aslo Download my Resume in PDF Format</h1>
-            <button class="bg-rose-400 w-25 mx-3 my-5 py-3 rounded-2xl cursor-pointer "><a href=""><i class="bi bi-file-earmark-fill"></i></a>Download</button>
+    <!-- FIXED SIDE BUTTONS FOR CALL & WHATSAPP -->
+    <div class="fixed right-6 bottom-8 z-40 flex flex-col gap-4">
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/919999999999" target="_blank" title="Chat on WhatsApp" class="flex items-center justify-center w- h-14 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white shadow-lg transition-all duration-300 hover:scale-110 transform">
+            <i class="bi bi-whatsapp h-100 text-lg"></i>
+        </a>
 
-          </div>
-          </div>
-        </div> 
-      </body>
+        <!-- Call Button -->
+        <a href="tel:+919999999999" title="Call Now" class="flex items-center justify-center w-14 h-14 rounded-full bg-legalGold hover:bg-legalGold-dark text-navyBlack shadow-lg transition-all duration-300 hover:scale-110 transform">
+            <i data-lucide="phone" class="w-6 h-6"></i>
+        </a>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
 </html>
